@@ -8,6 +8,8 @@ function Getsto() {
 
   const[search,setSearch] = useState('')
   const[getData,setGetdata] = useState([])
+  const[showConfirm,setShowConfirm] = useState(false)
+  const[selectedId,setSelectedId] = useState(null)
 
   useEffect(() =>{
     fetch("http://127.0.0.1:8000/calorie")
@@ -30,11 +32,13 @@ function Getsto() {
           console.log(data)
 
           alert("Delete success")
-          window.location.reload()
 
           setGetdata(
-            getData.filter(item => item.id !== id)
+            getData.filter(item => item.Id !== id)
           )
+
+          setShowConfirm(false)
+          setSelectedId(null)
 
         })
 
@@ -43,6 +47,20 @@ function Getsto() {
         })
 
 
+    }
+
+    function handleDeleteClick(id){
+      setSelectedId(id)
+      setShowConfirm(true)
+    }
+
+    function handleConfirmYes(){
+      deletefood(selectedId)
+    }
+
+    function handleConfirmNo(){
+      setShowConfirm(false)
+      setSelectedId(null)
     }
   
 
@@ -69,8 +87,8 @@ function Getsto() {
 
           <p className="text-[28px] absolute top-[19px] left-[93rem]">{item.Gram}</p>
 
-          <button className="bg-[#ffffff] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[99rem] top-[1.2rem]  flex items-center justify-center"> 
-          <img src="/src/Getsto/recycle-bin.png" alt="write" className="w-[25px] h-[25px]" onClick={() =>deletefood(item.Id)}/></button>
+          <button onClick={() => handleDeleteClick(item.Id)} className="bg-[#ffffff] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[99rem] top-[1.2rem]  flex items-center justify-center"> 
+          <img src="/src/Getsto/recycle-bin.png" alt="write" className="w-[25px] h-[25px]" /></button>
 
         </div>
       ))} 
@@ -80,6 +98,18 @@ function Getsto() {
          <button className="bg-[#FFFFFF] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[107rem] top-[1.8rem]  flex items-center justify-center"> 
           <img src="/src/Sidebar/write.png" alt="write" className="w-[25px] h-[25px]" /></button>
       </Link>
+
+      {showConfirm && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-[10px] p-6 shadow-xl w-[300px] text-center">
+            <p className="mb-4">ยืนยันการลบหรือไม่?</p>
+            <div className="flex justify-center gap-4">
+              <button onClick={handleConfirmYes} className="bg-red-500 text-white px-4 py-2 rounded-[8px]">Yes</button>
+              <button onClick={handleConfirmNo} className="bg-gray-200 px-4 py-2 rounded-[8px]">No</button>
+            </div>
+          </div>
+        </div>
+      )}
 
         
       </main>
@@ -94,45 +124,3 @@ function Getsto() {
 }
 
 export default Getsto
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
