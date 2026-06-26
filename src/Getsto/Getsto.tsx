@@ -48,7 +48,7 @@ function Getsto() {
 
  return (
     <>
-      <main className='Main'>
+      <main className='MainGet'>
 
        <h1 className='text-[23px] absolute left-[3rem] top-[2rem]'>Nutrition</h1> 
 
@@ -58,27 +58,27 @@ function Getsto() {
    
     {filterdata.map(item=>(
         <div key={item.Id} className="content bg-[FFFFFF] w-[92%] h-[5rem] left-[5.5rem] top-[15rem] border-[#aaaaaa] border-1 relative shadow-[0_4px_10px_rgba(0,0,0,0.5)] mb-5 rounded-[20px]" >
-
           <p className="text-[28px] absolute top-[19px] left-[5rem]">{item.Name}</p>
+          <div className='bg-[#f00] w-[27rem] h-[4rem] fixed left-[69vw]'>
+            
+            <p className="text-[20px] absolute top-[28px] left-[10rem]"> Cal.</p>
 
-          <p className="text-[20px] absolute top-[28px] left-[87.5rem]"> Cal.</p>
+            <p className="text-[28px] relative top-[19px] left-[6rem]">{item.Cal} </p>
 
-          <p className="text-[28px] absolute top-[19px] left-[84rem]">{item.Cal} </p>
+            <p className="text-[20px] absolute top-[28px] left-[20rem]"> G.</p>
 
-          <p className="text-[20px] absolute top-[28px] left-[96.5rem]"> G.</p>
+            <p className="text-[28px] absolute top-[19px] left-[16rem]">{item.Gram}</p>
 
-          <p className="text-[28px] absolute top-[19px] left-[93rem]">{item.Gram}</p>
-
-          <button className="bg-[#ffffff] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[99rem] top-[1.2rem]  flex items-center justify-center"> 
-          <img src="/src/Getsto/recycle-bin.png" alt="write" className="w-[25px] h-[25px]" onClick={() =>deletefood(item.Id)}/></button>
-
+            <button className="bg-[#ffffff] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[23.5rem] top-[1.2rem] absolute  flex items-center justify-center"> 
+            <img src="/src/Getsto/recycle-bin.png" alt="write" className="w-[25px] h-[25px]" onClick={() =>deletefood(item.Id)}/></button>
+          </div>
         </div>
       ))} 
 
 
       <Link to={"Poststo"}>
-         <button className="bg-[#FFFFFF] w-[45px] h-[45px] border-1 border-[#aaaaaa] shadow-xl rounded-[10px] absolute left-[107rem] top-[1.8rem]  flex items-center justify-center"> 
-          <img src="/src/Sidebar/write.png" alt="write" className="w-[25px] h-[25px]" /></button>
+         <button className=" PoststoBT  bg-[#FFFFFF] w-[43px] h-[47px] border-1 border-[#b9b9b9]  rounded-[10px]  absolute left-[90vw] top-[1.8rem]  flex items-center justify-center"> 
+          <img src="/src/Sidebar/write.png" alt="write" className="w-[24px] h-[24px]" /></button>
       </Link>
 
         

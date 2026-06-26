@@ -1,12 +1,125 @@
 @import "tailwindcss";
-.Main{
-    background-color: #FFFFFF;
-    width: 112rem;
+.MainGet{
+    background-color: #ffffff;
+    width: 115rem;
     height: 75rem;
     border-radius: 50px;
     
+    
     position: absolute;
-    top: 41.2rem;
-    left: 52%;
+    top: 40.7rem;
+    left: 51.4%;
     transform: translate(-50%,-50%);
+   
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 2560px) {
+    .MainGet {
+        width: 97%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 0px;
+    }
+}
+
+
+@media (max-width: 1920px) {
+    .MainGet {
+        width: 97%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 0px;
+    }
+   
+}
+
+@media (max-width: 1440px) {
+      .MainGet {
+        width: 96%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 6px;
+    }
+      .Search-bar{
+        width: 40rem;
+        left: 47rem;
+    }
+ }
+
+@media (max-width: 1280px) {
+    .MainGet {
+        width: 95%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 6px;
+    }
+    .PoststoBT{
+        left: 88vw
+    }
+      .Search-bar{
+        width: 40rem;
+        left: 35rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .MainGet {
+        width: 94.4%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 10px;
+    }
+       .PoststoBT{
+        left:83vw
+    }
+     .Search-bar{
+        width: 40rem;
+        left: 27.5rem;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .MainGet {
+        width: 93%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 425px) {
+    .MainGet {
+        width: 97%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 0px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .MainGet {
+        width: 97%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:  320px) {
+    .MainGet {
+        width: 97%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-left: 0px;
+    }
 }

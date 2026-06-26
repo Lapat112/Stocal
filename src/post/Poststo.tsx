@@ -34,7 +34,7 @@ function addFood(){
 
  return (
     <>
-      <main className='Main'>
+      <main className='MainPost'>
           <h1 className='text-[23px] absolute left-[3rem] top-[2rem]'>CreateMeal</h1> 
 
            <div className="content bg-[FFFFFF] w-[92%] h-[8rem] left-[5.5rem] top-[9rem] border-[#aaaaaa] border-1 relative shadow-[0_4px_10px_rgba(0,0,0,0.5)] mb-5 rounded-[20px]" >
