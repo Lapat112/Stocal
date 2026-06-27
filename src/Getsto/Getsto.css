@@ -1,14 +1,14 @@
 @import "tailwindcss";
 .MainGet{
     background-color: #ffffff;
-    width: 115rem;
+    width: 113rem;
     height: 75rem;
     border-radius: 50px;
     
     
     position: absolute;
     top: 40.7rem;
-    left: 51.4%;
+    left: 51%;
     transform: translate(-50%,-50%);
    
 }
@@ -20,106 +20,132 @@
 
 
 
+/* Base */
+.MainGet {
+    width: 95%;
+    border-radius: 30px;
+    padding: 1.5rem;
+    margin-left: 0;
+}
 
+/* ใหญ่กว่า 1600px ลงมา */
+@media (max-width: 1900px) {
+    .barcomman { left: 65rem; }
+}
 
-@media (max-width: 2560px) {
-    .MainGet {
-        width: 97%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 0px;
-    }
+@media (max-width: 1800px) {
+    .barcomman { left: 60rem; }
+}
+
+@media (max-width: 1700px) {
+    .barcomman { left: 55rem; }
+}
+
+@media (max-width: 1600px) {
+    .Search-bar { width: 44rem; left: 52rem; }
+    .barcomman  { left: 49rem; }
 }
 
 
-@media (max-width: 1920px) {
-    .MainGet {
-        width: 97%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 0px;
-    }
-   
+@media (max-width: 1500px) {
+    .barcomman { left: 48rem; }
 }
 
+/* Desktop */
 @media (max-width: 1440px) {
-      .MainGet {
-        width: 96%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 6px;
-    }
-      .Search-bar{
-        width: 40rem;
-        left: 47rem;
-    }
- }
+    .MainGet    { width: 96%; margin-left: 6px; }
+    .Search-bar { width: 40rem; left: 47rem; }
+    .barcomman { left: 43rem; }
+}
 
+@media (max-width: 1400px) {
+    .barcomman { left: 39rem; }
+}
+
+
+@media (max-width: 1300px) {
+    .MainGet    { width: 95.9%; margin-left: 6px; }
+    .Search-bar { width: 40rem; left: 43rem; }
+    .barcomman { left: 37rem; }
+}
+
+
+/* Laptop L */
 @media (max-width: 1280px) {
-    .MainGet {
-        width: 95%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 6px;
-    }
-    .PoststoBT{
-        left: 88vw
-    }
-      .Search-bar{
-        width: 40rem;
-        left: 35rem;
-    }
+    .MainGet    { width: 95%; margin-left: 6px; }
+    .Search-bar { width: 40rem; left: 40rem; }
+    .PoststoBT  { left: 88vw; }
+     .barcomman  { left: 35rem; }
+}
+
+@media (max-width: 1250px){
+    .barcomman  { left: 34rem; }
+}
+
+
+
+@media (max-width: 1200px){
+    .barcomman  { left: 29rem; }
+}
+
+@media (max-width: 1100px){
+    .Search-bar { width: 40rem; left: 35rem; }
+    .barcomman  { left: 23rem; }
+}
+
+
+
+/* Laptop */
+@media (max-width: 1024px) {
+    .MainGet    { width: 94.4%; margin-left: 10px; }
+    .Search-bar { width: 40rem; left: 34rem; }
+    .PoststoBT  { left: 83vw; }
+    .barcomman  { left: 21rem; }
 }
 
 @media (max-width: 1024px) {
-    .MainGet {
-        width: 94.4%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 10px;
-    }
-       .PoststoBT{
-        left:83vw
-    }
-     .Search-bar{
-        width: 40rem;
-        left: 27.5rem;
-    }
+
+    .Search-bar { width: 30rem; left: 29rem; }
+    .content{left: 50px;}
+    .barcomman  { left: 18rem; }
 }
- 
+
+@media (max-width: 900px) {
+    .MainGet    { width: 94.4%; margin-left: 10px; }
+    .Search-bar { width: 30rem; left: 29rem; }
+    .content{width: 44.5rem}
+    .barcomman  { left: 14rem; }
+}
+
+@media (max-width: 850px) {
+    .MainGet    { width: 94.4%; margin-left: 10px; }
+    .Search-bar { width: 30rem; left: 26rem; }
+    .content{width: 42rem}
+    .barcomman  { left: 12rem; }
+}
+
+
+
+@media (max-width: 800px) {
+    .MainGet    { width: 94.4%; margin-left: 10px; }
+    .Search-bar { width: 30rem; left: 26rem; }
+    .content{width: 40rem}
+    .barcomman  { left: 10rem; }
+}
+
+
+/* Tablet */
 @media (max-width: 768px) {
-    .MainGet {
-        width: 93%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 15px;
-    }
+    .MainGet { width: 93%; margin-left: 15px; }
+    .Search-bar { width: 30rem; left: 25rem; }
+    .content{width: 38rem}
+    .barcomman  { left: 10rem; }
 }
 
+
+
+/* Mobile */
 @media (max-width: 425px) {
-    .MainGet {
-        width: 97%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 0px;
-    }
-}
-
-
-@media (max-width: 375px) {
-    .MainGet {
-        width: 97%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 0px;
-    }
-}
-
-@media (max-width:  320px) {
-    .MainGet {
-        width: 97%;
-        border-radius: 30px;
-        padding: 1.5rem;
-        margin-left: 0px;
-    }
+    .MainGet { width: 97%; margin-left: 0; }
+    .barcomman  { left: 10rem; }
 }

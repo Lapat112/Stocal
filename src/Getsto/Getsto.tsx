@@ -59,7 +59,8 @@ function Getsto() {
     {filterdata.map(item=>(
         <div key={item.Id} className="content bg-[FFFFFF] w-[92%] h-[5rem] left-[5.5rem] top-[15rem] border-[#aaaaaa] border-1 relative shadow-[0_4px_10px_rgba(0,0,0,0.5)] mb-5 rounded-[20px]" >
           <p className="text-[28px] absolute top-[19px] left-[5rem]">{item.Name}</p>
-          <div className='bg-[#f00] w-[27rem] h-[4rem] fixed left-[69vw]'>
+          
+          <div className='barcomman  w-[30%] h-[4rem] absolute right-0'>
             
             <p className="text-[20px] absolute top-[28px] left-[10rem]"> Cal.</p>
 

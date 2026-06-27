@@ -1,13 +1,14 @@
 @import "tailwindcss";
 .MainPost{
     background-color: #ffffff;
-    width: 115rem;
+    width: 113rem;
     height: 75rem;
     border-radius: 50px;
     
+    
     position: absolute;
     top: 40.7rem;
-    left: 51.3%;
+    left: 51%;
     transform: translate(-50%,-50%);
    
 }
