@@ -53,7 +53,6 @@ async def create_item(item: Item):
 
     conn = sqlite3.connect("Sto_Cal.db")
     cursor = conn.cursor()
-
     cursor.execute(
         "INSERT INTO Data_cal (Name, Cal, Gram) VALUES (?, ?, ?)",
         (item.Name, item.Cal, item.Gram)

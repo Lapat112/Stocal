@@ -9,7 +9,7 @@ import Nav from './nav/Nav'
 
 import Sidebar from './Sidebar/Sidebar'
 
-import Pagelogin from './login/Pagelogin'
+
 
 import './App.css'
 
@@ -26,7 +26,6 @@ function App() {
       <Sidebar/> 
     
       <Outlet/>
-    
     </>
   )
 }

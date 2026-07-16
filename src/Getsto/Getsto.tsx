@@ -78,7 +78,7 @@ function Getsto() {
 
 
       <Link to={"Poststo"}>
-         <button className=" PoststoBT  bg-[#FFFFFF] w-[43px] h-[47px] border-1 border-[#b9b9b9]  rounded-[10px]  absolute left-[90vw] top-[1.8rem]  flex items-center justify-center"> 
+         <button className=" PoststoBT  bg-[#ffffff] w-[43px] h-[47px] rounded-[30px]  absolute left-[90vw] top-[1.8rem]  flex items-center justify-center hover:bg-[#e0e0e0]  transition-all duration-300 ease-in-out"> 
           <img src="/src/Sidebar/write.png" alt="write" className="w-[24px] h-[24px]" /></button>
       </Link>
 

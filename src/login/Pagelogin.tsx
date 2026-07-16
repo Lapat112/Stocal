@@ -1,53 +1,77 @@
 import { useState } from "react";
-import "./Css_login.css";
+
 
 function Pagelogin() {
-  const [inname, setInname] = useState("");
-  const [inpassword, setInpassword] = useState("");
+  const [name, setName] = useState("")
+  const [password, setPassword] = useState("")
 
-  async function llogin() {
-    const response = await fetch("http://localhost:8000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: inname,
-        password: inpassword,
-      }),
-    });
+  const handleLogin = async () => {
+    try {
+      const loginRepos = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: name,
+          password: password
+        })
+      })
 
-    const data = await response.json();
-
-    if (data.message === "Login Success") {
-      alert("Login ผ่าน");
-    } else {
-      alert("Login ไม่ผ่าน");
+      const data = await loginRepos.json()
+      if (data.message === "Login Success") {
+        alert("yes")
+      } else {
+        alert("no")
+      }
+    } catch (err) {
+      console.error(err)
     }
   }
 
   return (
-    <>
-      <main className="Main">
-        <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
-         <h1 className="text-3xl font-bold text-center mb-6">Login</h1>
-          <form className="space-y-4"  onSubmit={(e) => {  e.preventDefault();  llogin(); }}>
-            <div>
-              <label className="block mb-2">Username</label>
-              <input type="text" className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"  placeholder="Username"  onChange={(e) => setInname(e.target.value)} />
-            </div>
+    <div className="w-screen h-screen bg-[#f7f7f7] flex justify-center items-center">
+      
+      <div className="bg-white w-[400px] p-8 rounded-2xl shadow-xl top-[14rem] absolute">
 
-            <div>
-              <label className="block mb-2">Password</label>
-              <input type="password"  className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"  placeholder="Password"   onChange={(e) => setInpassword(e.target.value)} />
-            </div>
+        <h1 className="text-3xl font-bold text-center mb-2">Login</h1>
 
-            <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"> Sign In </button>
-          </form>
-        </div>
-      </main>
-    </>
+        <p className="text-gray-500 text-center mb-8">to your account</p>
+
+        <form className="flex flex-col gap-5">
+
+          <div>
+            <label className="font-medium">Name</label>
+            <input
+              type="text"
+              placeholder="Enter your username"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 mt-2 outline-none focus:border-blue-500"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="font-medium">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 mt-2 outline-none focus:border-blue-500"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="button"
+            className="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold duration-200"
+            onClick={handleLogin}
+          >
+            Login
+          </button>
+
+        </form>
+
+
+      </div>
+
+    </div>
   );
 }
-
 export default Pagelogin;

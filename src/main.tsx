@@ -9,16 +9,22 @@ import './index.css'
 import App from './App.tsx'
 import Getsto from './Getsto/Getsto.tsx'
 import Poststo from './post/Poststo.tsx'
-
+import Pagelogin from './login/Pagelogin.tsx'
+import RegisPage from './Register/register.tsx'
 
 const router = createBrowserRouter([
   {path:'/', element: <App/>,
     children:[
       {index:true,element:<Getsto/>},
-      {path:'Poststo',element:<Poststo/>}
+      {path:'Poststo',element:<Poststo/>},
+      {path:'Pagelogin',element:<Pagelogin/>},
+      {path:'RegisPage',element:<RegisPage/>}
+
+     
     ]
   }
-])
+ ]
+)
 
 createRoot(document.getElementById('root')!).render(    
     <RouterProvider router={router} />

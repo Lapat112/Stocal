@@ -35,7 +35,7 @@ function addFood(){
  return (
     <>
       <main className='MainPost'>
-          <h1 className='text-[23px] absolute left-[3rem] top-[2rem]'>CreateMeal</h1> 
+          <h1 className='text-[23px] absolute left-[3rem] top-[2rem]'>Create Meal</h1> 
 
            <div className="content bg-[FFFFFF] w-[92%] h-[8rem] left-[5.5rem] top-[9rem] border-[#aaaaaa] border-1 relative shadow-[0_4px_10px_rgba(0,0,0,0.5)] mb-5 rounded-[20px]" >
 
@@ -52,8 +52,8 @@ function addFood(){
             </div>
 
 
-              <button className="bg-[#FF2C2C] w-[13rem] h-[60px] border-1 border-[#ffffff] rounded-[20px] absolute left-[92rem] top-[21rem]  flex items-center justify-center text-amber-50"
-              onClick={addFood}>ADD</button> 
+              <button className="bg-[#2563EB] text-[17px] w-[13rem] h-[60px] border-1 border-[#ffffff] rounded-[20px] absolute left-[92rem] top-[21rem]  flex items-center justify-center text-amber-50"
+              onClick={addFood}>Add Meal</button> 
 
 
       </main>
