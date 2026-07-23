@@ -53,7 +53,7 @@ function RegisPage() {
           <div>
             <label className="font-medium">Password</label>
 
-            <input  type="Enter your password"  placeholder="Enter your password"  className="w-full border border-gray-300 rounded-xl px-4 py-3 mt-2 outline-none focus:border-blue-500" 
+            <input  type="password"  placeholder="Enter your password"  className="w-full border border-gray-300 rounded-xl px-4 py-3 mt-2 outline-none focus:border-blue-500" 
             onChange={(e) =>setPassword(e.target.value)}/>
           </div>
 

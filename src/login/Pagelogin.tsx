@@ -1,9 +1,10 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Pagelogin() {
-  const [name, setName] = useState("")
-  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -14,30 +15,57 @@ function Pagelogin() {
           username: name,
           password: password
         })
-      })
+      });
 
-      const data = await loginRepos.json()
+      const data = await loginRepos.json();
       if (data.message === "Login Success") {
-        alert("yes")
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("username", data.username);
+        navigate('/');
       } else {
-        alert("no")
+        alert("no");
       }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
+
+  const checktoken = async () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      // ถ้ายังไม่เคย login ไม่ต้อง redirect ในหน้า login เอง จะได้ไม่ loop
+      return;
+    }
+
+    try {
+      const resFu = await fetch("http://localhost:8000/profile", {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (!resFu.ok) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+      } else {
+        // token ยังใช้ได้ ไม่ต้องให้ผู้ใช้ login ซ้ำ พาไปหน้าแรกเลย
+        navigate('/');
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    checktoken();
+  }, []);
 
   return (
     <div className="w-screen h-screen bg-[#f7f7f7] flex justify-center items-center">
-      
       <div className="bg-white w-[400px] p-8 rounded-2xl shadow-xl top-[14rem] absolute">
-
         <h1 className="text-3xl font-bold text-center mb-2">Login</h1>
-
         <p className="text-gray-500 text-center mb-8">to your account</p>
 
         <form className="flex flex-col gap-5">
-
           <div>
             <label className="font-medium">Name</label>
             <input
@@ -65,12 +93,8 @@ function Pagelogin() {
           >
             Login
           </button>
-
         </form>
-
-
       </div>
-
     </div>
   );
 }

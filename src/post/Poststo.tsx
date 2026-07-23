@@ -65,4 +65,3 @@ function addFood(){
 }
 
 export default Poststo
-

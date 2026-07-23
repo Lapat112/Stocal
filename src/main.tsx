@@ -11,6 +11,7 @@ import Getsto from './Getsto/Getsto.tsx'
 import Poststo from './post/Poststo.tsx'
 import Pagelogin from './login/Pagelogin.tsx'
 import RegisPage from './Register/register.tsx'
+import UserPage from './Userpage/UserPage.tsx'
 
 const router = createBrowserRouter([
   {path:'/', element: <App/>,
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
       {index:true,element:<Getsto/>},
       {path:'Poststo',element:<Poststo/>},
       {path:'Pagelogin',element:<Pagelogin/>},
-      {path:'RegisPage',element:<RegisPage/>}
+      {path:'RegisPage',element:<RegisPage/>},
+      {path:'UserPage',element:<UserPage/>}
 
      
     ]
