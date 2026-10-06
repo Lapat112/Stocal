@@ -35,6 +35,19 @@ def ALL_data():
 
     return [dict(row) for row in rows]
 
+def ALL_WhoaddData():
+    conn = sqlite3.connect("Sto_Cal.db")
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM WhoAdd")
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return [dict(row) for row in rows]
+
+
 
 @app.get("/")
 def read_Main():
@@ -46,22 +59,48 @@ def calorie_data():
 
 
 
+@app.get("/WhoaddData")
+def WhoAdd():
+    return ALL_WhoaddData() 
+
+
 
 
 @app.post("/item/")
 async def create_item(item: Item):
-
     conn = sqlite3.connect("Sto_Cal.db")
     cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO Data_cal (Name, Cal, Gram) VALUES (?, ?, ?)",
-        (item.Name, item.Cal, item.Gram)
+        (item.Name, item.Cal, item.Gram)       
     )
+    conn.commit()
+    conn.close()
+    return {"message": "Item added successfully"}
 
+
+
+@app.post("/item/UserAddfood")
+async def create_item(item: Item):
+    conn = sqlite3.connect("Sto_Cal.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO WhoAdd (UserName,FoodName, Cal, Gram) VALUES (? , ? , ?, ?)",
+        (item.UserName,item.FoodName, item.Cal, item.Gram)       
+    )
     conn.commit()
     conn.close()
 
     return {"message": "Item added successfully"}
+
+
+
+
+
+
+
+
+
 
 @app.delete("/item/{item_id}")
 def delete_item(item_id: int):
